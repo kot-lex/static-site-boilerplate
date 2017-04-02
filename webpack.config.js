@@ -38,6 +38,7 @@ module.exports = {
                 url: false
               }
             },
+            'postcss-loader',
             'sass-loader'
           ]
         })

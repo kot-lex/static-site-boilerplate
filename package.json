@@ -4,7 +4,9 @@
   "description": "Starter project for static websites",
   "main": "index.js",
   "scripts": {
-    "build": "webpack",
+    "build": "npm run build:development",
+    "build:development": "webpack",
+    "build:production": "webpack --optimize-minimize",
     "start": "webpack-dev-server --open",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

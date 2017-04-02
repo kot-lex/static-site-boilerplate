@@ -30,12 +30,17 @@ module.exports = {
         test: /\.scss$/,
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',
-          use: ['css-loader', 'sass-loader']
+          use: [
+            {
+              loader: 'css-loader',
+              options: {
+                // Do not try to resolve background urls
+                url: false
+              }
+            },
+            'sass-loader'
+          ]
         })
-      },
-      {
-        test: /\.(jpg|png|svg|gif|mp4)$/,
-        loader: 'file-loader',
       },
       {
         test: /\.hbs$/,
